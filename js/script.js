@@ -1,5 +1,8 @@
 // GAME BOARD //
 // - constructor de la grille avec coordonnées
+$(".game-over").hide();
+$(".you-win").hide();
+
 function Game() {
     this.board = [
         ["C", "W", "W", "W", "W", "W", "W", "W", "B", "B", "L", "B", "W", "W", "W", "W", "W", "W", "W", "W"],
@@ -94,6 +97,8 @@ function updateBoard() {
        }
        removeDiamond()
        updateBoard();
+       gameOver();
+       youWin();
     }
     function moveRight(){
         if (player.playerPosition.x < 19){
@@ -103,6 +108,8 @@ function updateBoard() {
         }
         removeDiamond()
         updateBoard();
+        gameOver();
+        youWin();
      }
      function moveUp(){
         if (player.playerPosition.y > 0){
@@ -112,6 +119,8 @@ function updateBoard() {
         }
         removeDiamond()
         updateBoard();
+        gameOver();
+        youWin();
      }
 
     function moveDown(){
@@ -122,6 +131,8 @@ function updateBoard() {
        }
        removeDiamond()
        updateBoard();
+       gameOver();
+       youWin();
     }
             
 
@@ -155,29 +166,42 @@ function updateBoard() {
 
 // ISLANDS //
 // - crocodiles disapears and come back after passing the island
-var score = 0;
-var counter = document.querySelector('.counter')
+$(".island").removeClass("crocodile");
 
 // DIAMONDS //
 // - When Pipo touch diamond it disapears OK
 // - when Pipo touch a diamond, the counter is updating OK
 // - When a diamond is taken, it is replaced by an island OK
+var score = 0;
+var counter = document.querySelector('.counter')
 function removeDiamond(){
     $(".pipo").removeClass("diamond");
     $(".diamond").addClass("island").addClass("diamond-taken");
     
+    
     if ($(".pipo").hasClass("diamond-taken")){
     score += 1
     counter.innerHTML = score;
+    $(".pipo").removeClass("diamond-taken");
+    
     }
-  
 };
 
 
 // GAME OVER //
-// - game over when player touches a crocodile
-// 
-
+// - game over when player touches a crocodile **OK mais pb CSS à régler**
+function gameOver(){
+    if ($(".crocodile").hasClass("pipo")){
+        $(".game-over").show();
+        $(".tile").fadeOut(4000);
+    };
+};
 
 // WIN //
-// - player wins if he has all the gemes and arives to the boat//
+// - player wins if he has all the gemes and arives to the boat **OK mais pb CSS à régler**
+function youWin(){
+    if ($(".boat").hasClass("pipo") || $(".captain").hasClass("pipo") && score>=7){
+        $(".you-win").show();
+        $(".tile").fadeOut(4000);
+    };
+};
