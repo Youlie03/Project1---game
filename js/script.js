@@ -2,7 +2,7 @@
 // - constructor de la grille avec coordonnées
 function Game() {
     this.board = [
-        ["C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
+        ["C", "W", "W", "W", "W", "W", "W", "W", "B", "B", "L", "B", "W", "W", "W", "W", "W", "W", "W", "W"],
         ["C", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C"],
         ["D", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "C"],
         ["I", "C", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C"],
@@ -72,6 +72,12 @@ function updateBoard() {
                 if( player.board[l][c] === "C" ) {
                     $( "#" + l + "-" + c ).addClass( "crocodile" );
             }
+            if( player.board[l][c] === "B" ) {
+                $( "#" + l + "-" + c ).addClass( "boat" );
+        }
+        if( player.board[l][c] === "L" ) {
+            $( "#" + l + "-" + c ).addClass( "captain" );
+    }
         }
     }
          

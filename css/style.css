@@ -30,25 +30,24 @@ body{
 .tile{
     width: calc(100% / 20);
     height: calc(100% / 25);
-    background-color: rgb(55, 187, 121);
+    background-color: rgb(138, 212, 218);
     border: 0.1px solid rgba(151,439,186, 0.5);
     box-sizing: border-box;
 }
 
 
 .crocodile{
-    background-color: darkgreen;
+    /*background-color: darkgreen;*/
     background-image: url(file:///home/julie/code/projects/project1/images/croco.png);
     background-size: cover;
 }
 .island{
-    background-color: brown;
-    z-index: 2;
+    background-color: brown
 }
 
 .diamond{
-    background-color: brown;
-    background-image: url(/home/julie/code/projects/project1/images/Diamond.png);
+    background-color: 	brown;
+    background-image: url(/home/julie/code/projects/project1/images/Diamond2.png);
     background-size: cover;
 }
 
@@ -65,9 +64,21 @@ body{
     padding: 20px;
     border-radius: 25px;
     background-color: rgba(255, 255, 255, 0.9);
-    margin-left: 890px;
+    margin-left: 965px;
     font-weight: bolder;
     color: lightseagreen;
     font-size: 14px;
 }
 
+.boat{
+    background-color: orangered;
+    border-bottom: 2px solid brown;
+    box-sizing: border-box;
+}
+.captain{
+    background-color: orangered;
+    background-image: url(file:///home/julie/code/projects/project1/images/captain3.png);
+    background-size: 24px;
+    border-bottom: 2px solid brown;
+    box-sizing: border-box;
+}
