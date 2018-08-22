@@ -31,7 +31,7 @@ body{
     width: calc(100% / 20);
     height: calc(100% / 25);
     background-color: rgb(55, 187, 121);
-    border: 2px solid pink;
+    border: 0.1px solid rgba(151,439,186, 0.5);
     box-sizing: border-box;
 }
 
@@ -59,7 +59,7 @@ body{
     background-color: yellow;
 }
 
-.counter {
+.general-counter {
     position: absolute;
     top: 115px;
     padding: 20px;

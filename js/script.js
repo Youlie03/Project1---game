@@ -141,7 +141,6 @@ function updateBoard() {
  } );
 
 
-
 // CROCODILES //
 // - moves from right to left or left to right
 // - more you go in the top, more crocodiles and speeder ones
@@ -150,36 +149,23 @@ function updateBoard() {
 
 // ISLANDS //
 // - crocodiles disapears and come back after passing the island
-
+var score = 0;
+var counter = document.querySelector('.counter')
 
 // DIAMONDS //
-// - When Pipo touch diamond it disapears
-// - when Pipo touch a diamond, the counter is updating
-// - When a diamond is taken, it is replaced by an island
+// - When Pipo touch diamond it disapears OK
+// - when Pipo touch a diamond, the counter is updating OK
+// - When a diamond is taken, it is replaced by an island OK
 function removeDiamond(){
     $(".pipo").removeClass("diamond");
-    $(".diamond").addClass("island")
-
-  
+    $(".diamond").addClass("island").addClass("diamond-taken");
     
+    if ($(".pipo").hasClass("diamond-taken")){
+    score += 1
+    counter.innerHTML = score;
+    }
+  
 };
-//updateBoard();
-
-
-////function removeDiamond(){
-////    for( var l = 0; l < 25; l++ ) {
-////        for( var c = 0; c < 20; c++ ) {
-////    if(player.board[l][c] === "D") {
-////        $( "#" + l + "-" + c ).removeClass( "diamond" );
-////        }
-////    }
-////} 
-////removeDiamond()
-////updateBoard(); 
-////}  
-
-
-
 
 
 // GAME OVER //
