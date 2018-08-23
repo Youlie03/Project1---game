@@ -2,7 +2,7 @@ body{
     background-position: center;
     font-family: Arial, Helvetica, sans-serif;
     background-color: white;
-    background-image: url(/home/julie/code/projects/project1/images/fond6.jpg);
+    background-image: url(../images/fond6.jpg);
     background-repeat: no-repeat;
     background-size: 850px;
     
@@ -38,7 +38,7 @@ body{
 
 .crocodile{
     /*background-color: darkgreen;*/
-    background-image: url(file:///home/julie/code/projects/project1/images/crocoGif.gif);
+    background-image: url(../images/crocoGif.gif);
     background-size: cover;
 }
 .island{
@@ -47,14 +47,14 @@ body{
 
 .diamond{
     background-color: brown;
-    background-image: url(/home/julie/code/projects/project1/images/Diamond2.png);
+    background-image: url(../images/Diamond2.png);
     background-size: 17px;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .pipo {
-    background-image: url(file:///home/julie/code/projects/project1/images/pirate-back.png);
+    background-image: url(../images/pirate-back.png);
     background-size: 18px;
     background-position: center;
     background-repeat: no-repeat;
@@ -79,7 +79,7 @@ body{
 }
 .captain{
     background-color: orangered;
-    background-image: url(file:///home/julie/code/projects/project1/images/captain3.png);
+    background-image: url(../images/captain3.png);
     background-size: 24px;
     border-bottom: 2px solid brown;
     box-sizing: border-box;
