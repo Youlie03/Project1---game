@@ -3,34 +3,33 @@
 $(".game-over").hide();
 $(".you-win").hide();
 
-
 function Game() {
     this.board = [
-        ["C", "W", "W", "W", "W", "W", "W", "W", "B", "B", "L", "B", "W", "W", "W", "W", "W", "W", "W", "W"],
-        ["C", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C"],
-        ["D", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "C"],
-        ["I", "C", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C"],
-        ["C", "W", "W", "W", "W", "W", "W", "I", "D", "I", "W", "W", "C", "W", "W", "W", "W", "W", "W", "C"],
-        ["W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C"],
-        ["W", "C", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W"],
-        ["C", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W"],
-        ["W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
-        ["I", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "C", "W", "I", "D", "W", "W", "W", "W", "W"],
-        ["D", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W"],
-        ["I", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
-        ["W", "C", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W"],
-        ["W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "D"],
-        ["W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "I"],
-        ["W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W"],
-        ["W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
-        ["W", "W", "W", "W", "W", "W", "W", "I", "D", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
-        ["W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
-        ["C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W"],
-        ["W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "I", "I", "D", "W"],
-        ["W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
-        ["W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
-        ["W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
-        ["W", "W", "W", "W", "W", "W", "W", "W", "W", "P", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"]
+      /*4*/  ["C", "W", "W", "W", "W", "W", "W", "W", "B", "B", "L", "B", "W", "W", "W", "W", "W", "W", "W", "W"],
+      /*4*/  ["W", "W", "C", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W"],
+      /*4*/  ["D", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W"],
+      /*4*/  ["I", "C", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W"],
+      /*4*/  ["C", "W", "W", "W", "W", "W", "W", "I", "D", "I", "W", "W", "C", "W", "W", "W", "W", "C", "W", "W"],
+      /*3*/  ["W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W"],
+      /*3*/  ["W", "C", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "C", "W", "C", "W", "W"],
+      /*3*/  ["C", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W"],
+      /*3*/  ["W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
+      /*3*/  ["I", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "C", "W", "I", "D", "W", "W", "W", "W", "W"],
+      /*3*/  ["D", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W"],
+      /*4*/  ["I", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
+      /*2*/  ["W", "C", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W"],
+      /*2*/  ["W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "D"],
+      /*2*/  ["W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "I"],
+      /*2*/  ["W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W"],
+      /*2*/  ["W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
+      /*2*/  ["W", "W", "W", "W", "W", "W", "W", "I", "D", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
+      /*1*/  ["W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
+      /*1*/  ["C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W"],
+      /*2*/  ["W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "I", "I", "D", "W"],
+      /*1*/  ["W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
+      /*2*/  ["W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
+      /*1*/  ["W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
+      /*0*/  ["W", "W", "W", "W", "W", "W", "W", "W", "W", "P", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"]
     ];
 
     this.playerPosition ={
@@ -39,38 +38,38 @@ function Game() {
     }; 
 
     this.crocoSpeed =[ //valeur du counter + valeur par defaut du counter
-        [120, 120],
-        [120, 120],
-        [120, 120],
-        [120, 120],
-        [120, 120],
-        [120, 120],
-        [120, 120],
-        [120, 120],
-        [120, 120],
-        [120, 120],
-        [120, 120],
-        [120, 120],
-        [120, 120],
-        [120, 120],
-        [120, 120],
-        [120, 120],
-        [120, 120],
-        [120, 120],
-        [120, 120],
-        [120, 120],
-        [120, 120],
-        [120, 120],
-        [120, 120],
-        [120, 120],
-        [120, 120]
+        [2, 2, 4],
+        [2, 2, 4],
+        [2, 2, 4],
+        [2, 2, 4],
+        [2, 2, 4],
+        [2, 2, 3],
+        [2, 2, 3],
+        [2, 2, 3],
+        [2, 2, 3],
+        [2, 2, 3],
+        [2, 2, 3],
+        [2, 2, 4],
+        [2, 2, 2],
+        [2, 2, 2],
+        [2, 2, 2],
+        [2, 2, 2],
+        [2, 2, 2],
+        [2, 2, 2],
+        [2, 2, 1],
+        [2, 2, 1],
+        [2, 2, 2],
+        [2, 2, 1],
+        [2, 2, 2],
+        [2, 2, 1],
+        [2, 2, 0]
     ];
 };
 
     var player = new Game();
 
 
-// - create a grid in html with a loop
+// GRID //
 for (var l = 0 ; l<25; l++){
     for (var c = 0; c < 20; c++){
     var newTile = $("<div id='" + l + "-" + c + "' class='tile'></div>");
@@ -80,11 +79,9 @@ for (var l = 0 ; l<25; l++){
 } 
 
 // PLAYER // 
-// - Moves all directions OK
-// - Stops when touches borders OK
-secondsCounter = 0;
 function updateBoard() {
     $(".tile").removeClass("pipo");
+    $(".tile").removeClass("crocodile");
     for( var l = 0; l < 25; l++ ) {
         for( var c = 0; c < 20; c++ ) {
             if(player.board[l][c] === "P") {
@@ -111,27 +108,36 @@ function updateBoard() {
             }
         }
     }
-    for(i=0; i<player.crocoSpeed.length; i++){
-        player.crocoSpeed[i][0] -= 1;
+    for(var i=0; i<player.crocoSpeed.length; i++){
+        player.crocoSpeed[i][0] -= 0.5;
+
         if (player.crocoSpeed[i][0] === 0){
             player.crocoSpeed[i][0] = player.crocoSpeed[i][1];
-            for (j=0; j<=player.board[i].length; j++){
+            
+            for(var j = player.board[i].length; j >= 0; j--){
                 if (player.board[i][j] === "C"){
-                    player.board[i][j] = "W"
-                    player.board[i][j+1] = "C"  
+                    player.board[i][j+1] = "C";
+                    player.board[i][j] = "W";
+                
+                }
+                var crocoLength = player.board[i].filter(function (oneCroco){
+                    return oneCroco == "C";
+                })
+                if (crocoLength.length < player.crocoSpeed[i][2]){
+                    player.board[i][0] = "C"
+                }
+
                 }
             }
-            
         }
-       // console.log(player.crocoSpeed[i][0]);
     }
 
-    //requestAnimationFrame(function(){
-    //    updateBoard()
-    //})
 
-}
+
+setInterval(function(){
     updateBoard();
+}, 500);
+
 
 
    function moveLeft(){
@@ -230,9 +236,7 @@ function updateBoard() {
 
 
 // CROCODILES //
-// - moves from right to left or left to right
-// - more you go in the top, more crocodiles and speeder ones
-// 1 vitesse specifique à chaque ligne
+
 
 
 // ISLANDS //
@@ -240,22 +244,21 @@ function updateBoard() {
 //$(".island").removeClass("crocodile");
 
 // DIAMONDS //
-// - When Pipo touch diamond it disapears OK
-// - when Pipo touch a diamond, the counter is updating OK
-// - When a diamond is taken, it is replaced by an island OK
 var score = 0;
 var counter = document.querySelector('.counter')
 function removeDiamond(){
-    $(".pipo").removeClass("diamond");
     $(".diamond").addClass("island").addClass("diamond-taken");
+    $(".pipo").removeClass("diamond");
     
+    updateBoard();
     
-    if ($(".pipo").hasClass("diamond-taken")){
+    if ($(".pipo").hasClass("diamond-taken") && $(".pipo").hasClass("island")){
     score += 1
     counter.innerHTML = score;
     $(".pipo").removeClass("diamond-taken");
     
     }
+   
 };
 
 
@@ -269,7 +272,6 @@ function gameOver(){
 };
 
 // WIN //
-// - player wins if he has all the gemes and arives to the boat **OK mais pb CSS à régler**
 function youWin(){
     if ($(".boat").hasClass("pipo") && score>=7 || $(".captain").hasClass("pipo") && score>=7){
         $(".you-win").show();
