@@ -5,29 +5,29 @@ $(".you-win").hide();
 
 function Game() {
     this.board = [
-      /*4*/  ["C", "W", "W", "W", "W", "W", "W", "W", "B", "B", "L", "B", "W", "W", "W", "W", "W", "W", "W", "W"],
-      /*4*/  ["W", "W", "C", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W"],
-      /*4*/  ["D", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W"],
-      /*4*/  ["I", "C", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W"],
-      /*4*/  ["C", "W", "W", "W", "W", "W", "W", "I", "D", "I", "W", "W", "C", "W", "W", "W", "W", "C", "W", "W"],
-      /*3*/  ["W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W"],
+      /*2*/  ["C", "W", "W", "C", "W", "W", "W", "W", "B", "B", "L", "B", "W", "W", "W", "W", "W", "C", "W", "W"],
+      /*4*/  ["W", "W", "C", "W", "W", "W", "C", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "C", "W"],
+      /*4*/  ["D", "C", "W", "W", "C", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W"],
+      /*4*/  ["I", "C", "W", "W", "W", "C", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W"],
+      /*4*/  ["C", "W", "W", "W", "W", "W", "C", "I", "D", "I", "W", "W", "C", "W", "W", "W", "W", "C", "W", "W"],
+      /*3*/  ["W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "C", "W"],
       /*3*/  ["W", "C", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "C", "W", "C", "W", "W"],
       /*3*/  ["C", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W"],
-      /*3*/  ["W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
-      /*3*/  ["I", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "C", "W", "I", "D", "W", "W", "W", "W", "W"],
-      /*3*/  ["D", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W"],
-      /*4*/  ["I", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
+      /*3*/  ["W", "C", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W"],
+      /*3*/  ["I", "W", "W", "W", "W", "C", "W", "W", "W", "C", "W", "C", "W", "I", "D", "W", "W", "W", "W", "W"],
+      /*3*/  ["D", "W", "C", "W", "W", "C", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W"],
+      /*4*/  ["I", "W", "C", "W", "W", "W", "C", "W", "W", "W", "W", "W", "C", "W", "W", "C", "W", "W", "W", "W"],
       /*2*/  ["W", "C", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W"],
-      /*2*/  ["W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "D"],
-      /*2*/  ["W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "I"],
-      /*2*/  ["W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W"],
-      /*2*/  ["W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
-      /*2*/  ["W", "W", "W", "W", "W", "W", "W", "I", "D", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
-      /*1*/  ["W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
-      /*1*/  ["C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W"],
-      /*2*/  ["W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "I", "I", "D", "W"],
-      /*1*/  ["W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
-      /*2*/  ["W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
+      /*2*/  ["W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "D"],
+      /*2*/  ["W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "I"],
+      /*2*/  ["W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W"],
+      /*2*/  ["W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W"],
+      /*2*/  ["W", "C", "W", "W", "W", "W", "W", "I", "D", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W"],
+      /*1*/  ["W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
+      /*1*/  ["C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
+      /*2*/  ["W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "I", "I", "D", "W"],
+      /*1*/  ["W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
+      /*2*/  ["W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W"],
       /*1*/  ["W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
       /*0*/  ["W", "W", "W", "W", "W", "W", "W", "W", "W", "P", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"]
     ];
@@ -38,7 +38,7 @@ function Game() {
     }; 
 
     this.crocoSpeed =[ //valeur du counter + valeur par defaut du counter
-        [2, 2, 4],
+        [2, 2, 2],
         [2, 2, 4],
         [2, 2, 4],
         [2, 2, 4],
@@ -81,7 +81,8 @@ for (var l = 0 ; l<25; l++){
 // PLAYER // 
 function updateBoard() {
     $(".tile").removeClass("pipo");
-    $(".tile").removeClass("crocodile");
+$(".tile").removeClass("crocodile");
+    
     for( var l = 0; l < 25; l++ ) {
         for( var c = 0; c < 20; c++ ) {
             if(player.board[l][c] === "P") {
@@ -106,37 +107,59 @@ function updateBoard() {
             if( player.board[l][c] === "L" ) {
             $( "#" + l + "-" + c ).addClass( "captain" );
             }
+  
         }
     }
-    for(var i=0; i<player.crocoSpeed.length; i++){
-        player.crocoSpeed[i][0] -= 0.5;
+   for(var i=0; i<player.crocoSpeed.length; i++){
+       player.crocoSpeed[i][0] -= 0.5;
+       if (player.crocoSpeed[i][0] === 0){
+           player.crocoSpeed[i][0] = player.crocoSpeed[i][1];
+           
+           for(var j = player.board[i].length; j >= 0; j--){
+            if (player.board[i][j] === "C" && player.board[i][j+1] !== "I" ){
+                   player.board[i][j+1] = "C";
+                   player.board[i][j] = "W";
+               
+               } else if (player.board[i][j] === "C" && player.board[i][j+1] === "I" ){
+                player.board[i][j] = "W"
+                        if (player.board[i][j+2] === "I") {
+                            player.board[i][j+2] = "I"
 
-        if (player.crocoSpeed[i][0] === 0){
-            player.crocoSpeed[i][0] = player.crocoSpeed[i][1];
-            
-            for(var j = player.board[i].length; j >= 0; j--){
-                if (player.board[i][j] === "C"){
-                    player.board[i][j+1] = "C";
-                    player.board[i][j] = "W";
-                
-                }
-                var crocoLength = player.board[i].filter(function (oneCroco){
-                    return oneCroco == "C";
-                })
-                if (crocoLength.length < player.crocoSpeed[i][2]){
-                    player.board[i][0] = "C"
-                }
+                        } else {
+                            setTimeout(() => {
+                                player.board[i][j+2] = "C"
+                                
+                            }, 1000);
+                        }
+                        if (player.board[i][j+3] === "I") {
+                            player.board[i][j+3] = "I"
 
-                }
-            }
-        }
-    }
-
-
-
-setInterval(function(){
-    updateBoard();
-}, 500);
+                        } else {
+                            setTimeout(() => {
+                                player.board[i][j+3] = "C"
+                                
+                            }, 1000);
+                        }
+                // $( ".crocodile" ).hide()
+               }
+               }
+               var crocoLength = player.board[i].filter(function (oneCroco){
+                   return oneCroco == "C";
+               })
+               if (crocoLength.length < player.crocoSpeed[i][2]){
+                   player.board[i][0] = "C"
+               }
+           }
+       }
+      
+}
+//updateBoard();
+    
+    
+  setInterval(function(){
+      updateBoard();
+  }, 500);
+ 
 
 
 
@@ -207,28 +230,28 @@ setInterval(function(){
        case 37:  // left arrow  
          moveLeft();
          $(".pipo").css(
-         { "background-image":"url('file:///home/julie/code/projects/project1/images/pirate-left.png')"}
+         { "background-image":"url('./images/pirate-left.png')"}
          )
          break;
    
       case 38: // up arrow
        moveUp();
        $(".pipo").css(
-        { "background-image":"url('file:///home/julie/code/projects/project1/images/pirate-back.png')"}
+        { "background-image":"url('./images/pirate-back.png')"}
         )
        break;
    
        case 39: // right arrow
        moveRight();
        $(".pipo").css(
-        { "background-image":"url('file:///home/julie/code/projects/project1/images/pirate-right.png')"}
+        { "background-image":"url('./images/pirate-right.png')"}
         )
        break;
    
        case 40: // down arrow
        moveDown();
        $(".pipo").css(
-        { "background-image":"url('file:///home/julie/code/projects/project1/images/pirate-front.png')"}
+        { "background-image":"url('./images/pirate-front.png')"}
         )
        break;
      }
@@ -241,20 +264,24 @@ setInterval(function(){
 
 // ISLANDS //
 // - crocodiles disapears and come back after passing the island
-//$(".island").removeClass("crocodile");
+function removeCrocoFromIsland(){
+    $(".island").removeClass("crocodile")
+    updateBoard()
+}
 
 // DIAMONDS //
 var score = 0;
 var counter = document.querySelector('.counter')
 function removeDiamond(){
-    $(".diamond").addClass("island").addClass("diamond-taken");
     $(".pipo").removeClass("diamond");
-    
+    $(".diamond").addClass("island").addClass("diamond-taken");
+   
     updateBoard();
     
     if ($(".pipo").hasClass("diamond-taken") && $(".pipo").hasClass("island")){
     score += 1
     counter.innerHTML = score;
+    updateBoard();
     $(".pipo").removeClass("diamond-taken");
     
     }
@@ -263,11 +290,11 @@ function removeDiamond(){
 
 
 // GAME OVER //
-// - game over when player touches a crocodile **OK mais pb CSS à régler**
 function gameOver(){
-    if ($(".crocodile").hasClass("pipo")){
+    if ($(".pipo").hasClass("crocodile")){
         $(".game-over").show();
         $(".tile").fadeOut(4000);
+        updateBoard()
     };
 };
 
@@ -276,6 +303,7 @@ function youWin(){
     if ($(".boat").hasClass("pipo") && score>=7 || $(".captain").hasClass("pipo") && score>=7){
         $(".you-win").show();
         $(".tile").fadeOut(4000);
+         updateBoard()
     };
 };
 
