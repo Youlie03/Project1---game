@@ -81,11 +81,11 @@ for (var l = 0 ; l<25; l++){
 // PLAYER // 
 function updateBoard() {
     $(".tile").removeClass("pipo");
-$(".tile").removeClass("crocodile");
+    $(".tile").removeClass("crocodile");
     
     for( var l = 0; l < 25; l++ ) {
         for( var c = 0; c < 20; c++ ) {
-            if(player.board[l][c] === "P") {
+            if(player.board[l][c].includes("P")) {
                 $( "#" + l + "-" + c ).addClass( "pipo" );
             }
                 if( player.board[l][c] === "W" ) {
@@ -98,7 +98,7 @@ $(".tile").removeClass("crocodile");
                 if( player.board[l][c] === "D" ) {
                     $( "#" + l + "-" + c ).addClass( "diamond" );
                 }
-                if( player.board[l][c] === "C" ) {
+                if( player.board[l][c].includes("C")) {
                     $( "#" + l + "-" + c ).addClass( "crocodile" );
             }
             if( player.board[l][c] === "B" ) {
@@ -110,38 +110,40 @@ $(".tile").removeClass("crocodile");
   
         }
     }
+
+    gameOver();
+
    for(var i=0; i<player.crocoSpeed.length; i++){
        player.crocoSpeed[i][0] -= 0.5;
        if (player.crocoSpeed[i][0] === 0){
            player.crocoSpeed[i][0] = player.crocoSpeed[i][1];
            
            for(var j = player.board[i].length; j >= 0; j--){
-            if (player.board[i][j] === "C" && player.board[i][j+1] !== "I" ){
-                   player.board[i][j+1] = "C";
-                   player.board[i][j] = "W";
-               
-               } else if (player.board[i][j] === "C" && player.board[i][j+1] === "I" ){
-                player.board[i][j] = "W"
-                        if (player.board[i][j+2] === "I") {
-                            player.board[i][j+2] = "I"
+            if (player.board[i][j] === "C") {
+                if (player.board[i][j+1] === "W") {
+                    player.board[i][j+1] = "C";
+                    player.board[i][j] = "W";
+                
+                }
+                else if (player.board[i][j+1] === "P") {
+                    player.board[i][j+1] = "PC";
+                    player.board[i][j] = "W";
+                }
+                else {
+                    player.board[i][j] = "W"
+                    var plus = 2;
 
-                        } else {
-                            setTimeout(() => {
-                                player.board[i][j+2] = "C"
-                                
-                            }, 1000);
+                    while (player.board[i][j+plus] !== "W") {
+                        if (j+plus >= player.board[i].length) {
+                            break;
                         }
-                        if (player.board[i][j+3] === "I") {
-                            player.board[i][j+3] = "I"
-
-                        } else {
-                            setTimeout(() => {
-                                player.board[i][j+3] = "C"
-                                
-                            }, 1000);
-                        }
-                // $( ".crocodile" ).hide()
+                        plus++;
+                    }
+                    player.board[i][j+plus] = "C";
+                        
+            // $( ".crocodile" ).hide()
                }
+            }
                }
                var crocoLength = player.board[i].filter(function (oneCroco){
                    return oneCroco == "C";
@@ -156,7 +158,7 @@ $(".tile").removeClass("crocodile");
 //updateBoard();
     
     
-  setInterval(function(){
+  var timer = setInterval(function(){
       updateBoard();
   }, 500);
  
@@ -167,7 +169,12 @@ $(".tile").removeClass("crocodile");
 
        if (player.playerPosition.x > 0) {
             player.playerPosition.x -= 1;
-            player.board[player.playerPosition.y][player.playerPosition.x] = "P";
+            if (player.board[player.playerPosition.y][player.playerPosition.x] === "C") {
+                player.board[player.playerPosition.y][player.playerPosition.x] = "PC";
+            }
+            else {
+                player.board[player.playerPosition.y][player.playerPosition.x] = "P";
+            }
             player.board[player.playerPosition.y][player.playerPosition.x + 1] = "W";
             $(".pipo").css(
                 { "background-image":""}
@@ -182,7 +189,12 @@ $(".tile").removeClass("crocodile");
     function moveRight(){
         if (player.playerPosition.x < 19){
              player.playerPosition.x += 1;
-             player.board[player.playerPosition.y][player.playerPosition.x] = "P";
+             if (player.board[player.playerPosition.y][player.playerPosition.x] === "C") {
+                player.board[player.playerPosition.y][player.playerPosition.x] = "PC";
+             }
+             else {
+                player.board[player.playerPosition.y][player.playerPosition.x] = "P";
+             }
              player.board[player.playerPosition.y][player.playerPosition.x - 1] = "W";
              $(".pipo").css(
                 { "background-image":""}
@@ -196,7 +208,12 @@ $(".tile").removeClass("crocodile");
      function moveUp(){
         if (player.playerPosition.y > 0){
              player.playerPosition.y -= 1;
-             player.board[player.playerPosition.y][player.playerPosition.x] = "P";
+             if (player.board[player.playerPosition.y][player.playerPosition.x] === "C") {
+                player.board[player.playerPosition.y][player.playerPosition.x] = "PC";
+             }
+             else {
+                player.board[player.playerPosition.y][player.playerPosition.x] = "P";
+             }
              player.board[player.playerPosition.y +1][player.playerPosition.x] = "W";
              $(".pipo").css(
                 { "background-image":""}
@@ -211,7 +228,12 @@ $(".tile").removeClass("crocodile");
     function moveDown(){
        if (player.playerPosition.y < 24){
             player.playerPosition.y += 1;
+            if (player.board[player.playerPosition.y][player.playerPosition.x] === "C") {
+                player.board[player.playerPosition.y][player.playerPosition.x] = "PC";
+            }
+            else {
             player.board[player.playerPosition.y][player.playerPosition.x] = "P";
+            }
             player.board[player.playerPosition.y - 1][player.playerPosition.x] = "W";
             $(".pipo").css(
                 { "background-image":""}
@@ -291,10 +313,11 @@ function removeDiamond(){
 
 // GAME OVER //
 function gameOver(){
+    console.log($(".pipo").prop("class"))
     if ($(".pipo").hasClass("crocodile")){
         $(".game-over").show();
-        $(".tile").fadeOut(4000);
-        updateBoard()
+        $(".game-board").fadeOut(4000);
+        clearInterval(timer);
     };
 };
 
