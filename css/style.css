@@ -38,7 +38,7 @@ body{
 
 .crocodile{
     /*background-color: darkgreen;*/
-    background-image: url(file:///home/julie/code/projects/project1/images/croco.png);
+    background-image: url(file:///home/julie/code/projects/project1/images/crocoGif.gif);
     background-size: cover;
 }
 .island{
@@ -46,16 +46,18 @@ body{
 }
 
 .diamond{
-    background-color: 	brown;
+    background-color: brown;
     background-image: url(/home/julie/code/projects/project1/images/Diamond2.png);
-    background-size: cover;
+    background-size: 17px;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .pipo {
-    background-image: url(file:///home/julie/code/projects/project1/images/pirate.png);
-    background-size: 35px;
+    background-image: url(file:///home/julie/code/projects/project1/images/pirate-back.png);
+    background-size: 18px;
     background-position: center;
-    background-color: yellow;
+    background-repeat: no-repeat;
 }
 
 .general-counter {
@@ -82,20 +84,20 @@ body{
     border-bottom: 2px solid brown;
     box-sizing: border-box;
 }
-.you-win {
+.you-win, .game-over, .goback-bubble{
     position: absolute;
     border-radius: 25px;
     background-color: rgba(255, 255, 255, 0.9);
-    margin-left: 324px;
+    margin-left: 250px;
     font-weight: bolder;
-    color: red;
+    color: lightseagreen;
     font-size: 44px;
-    bottom: 238px;
-    border: 5px solid red;
+    bottom: 215px;
+    border: 5px solid lightseagreen;
     z-index: 1;
 };
 
-.game-over {
+/*.game-over {
     position: absolute;
     padding: 20px;
     border-radius: 25px;
@@ -107,7 +109,5 @@ body{
     bottom: 325px;
     border: 5px solid red;
     z-index: 1;
-};
-
-
+};*/
 
