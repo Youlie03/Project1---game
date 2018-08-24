@@ -3,6 +3,10 @@
 $(".game-over").hide();
 $(".you-win").hide();
 
+var mySound = document.querySelector(".son");
+//document.querySelector(".game-board").addEventListener("click", function(){
+   
+//})
 function Game() {
     this.board = [
       /*2*/  ["C", "W", "W", "W", "W", "W", "W", "W", "B", "B", "L", "B", "W", "W", "W", "W", "W", "C", "W", "W"],
@@ -250,6 +254,7 @@ function updateBoard() {
 
  var body = $("body");
  body.keyup(function () {
+    mySound.play()
      switch (event.keyCode) {
        case 37:  // left arrow  
          moveLeft();
