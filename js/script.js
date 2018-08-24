@@ -314,9 +314,9 @@ function removeDiamond(){
 
 
 // GAME OVER //
-function gameOver(){
+function gameOver(){ 
     console.log($(".pipo").prop("class"))
-    if ($(".pipo").hasClass("crocodile") && $(".pipo").hasClass(!"island") ){
+    if ($(".pipo").hasClass("crocodile") && !$(".pipo").hasClass("island") ){
         $(".game-over").show();
         $(".game-board").fadeOut(4000);
         clearInterval(timer);
