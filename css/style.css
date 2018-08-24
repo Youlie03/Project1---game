@@ -4,7 +4,7 @@ body{
     background-color: white;
     background-image: url(../images/fond6.jpg);
     background-repeat: no-repeat;
-    background-size: 850px;
+    background-size: 885px;
     
     
 }
@@ -61,15 +61,14 @@ body{
 }
 
 .general-counter {
-    position: absolute;
     top: 585px;
     padding: 9px;
     border-radius: 25px;
     background-color: rgba(255, 255, 255, 0.6);
-    margin-left: 435px;
     font-weight: bolder;
     color: brown;
     font-size: 40px;
+    text-align: center;
 }
 
 .boat{
@@ -84,30 +83,29 @@ body{
     border-bottom: 2px solid brown;
     box-sizing: border-box;
 }
-.you-win, .game-over, .goback-bubble{
-    position: absolute;
+.rules-container{
+        /*border: 2px solid red;*/
+        height: 500px;
+        position: absolute;
+        width: 600px;
+        margin: o;
+        margin: 0 0 0 -90px;
+
+}   
+.you-win, .game-over{
+    position: relative;
     border-radius: 25px;
     background-color: rgba(255, 255, 255, 0.9);
-    margin-left: 250px;
     font-weight: bolder;
-    color: lightseagreen;
+    color: rgb(236, 120, 65);
     font-size: 44px;
-    bottom: 215px;
     border: 5px solid lightseagreen;
-    z-index: 1;
+    z-index: 2;
+    text-align: center;
+    margin: 0 auto;
+    height: auto;
+    width: 500px;
 };
 
-/*.game-over {
-    position: absolute;
-    padding: 20px;
-    border-radius: 25px;
-    background-color: rgba(255, 255, 255, 0.9);
-    margin-left: 563px;
-    font-weight: bolder;
-    color: red;
-    font-size: 44px;
-    bottom: 325px;
-    border: 5px solid red;
-    z-index: 1;
-};*/
+
 

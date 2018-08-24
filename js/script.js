@@ -1,7 +1,7 @@
 // GAME BOARD //
 // - constructor de la grille avec coordonnées
 $(".game-over").hide();
-$(".you-win").hide();
+//$(".you-win").hide();
 
 function Game() {
     this.board = [
@@ -318,7 +318,7 @@ function gameOver(){
     console.log($(".pipo").prop("class"))
     if ($(".pipo").hasClass("crocodile") && !$(".pipo").hasClass("island") ){
         $(".game-over").show();
-        $(".game-board").fadeOut(4000);
+        //$(".game-board").fadeOut(4000);
         clearInterval(timer);
     };
 };
@@ -327,7 +327,7 @@ function gameOver(){
 function youWin(){
     if ($(".boat").hasClass("pipo") && score>=7 || $(".captain").hasClass("pipo") && score>=7){
         $(".you-win").show();
-        $(".tile").fadeOut(4000);
+       // $(".tile").fadeOut(4000);
          updateBoard()
     };
 };
