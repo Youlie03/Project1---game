@@ -1,7 +1,7 @@
 // GAME BOARD //
 // - constructor de la grille avec coordonnées
 $(".game-over").hide();
-//$(".you-win").hide();
+$(".you-win").hide();
 
 function Game() {
     this.board = [
