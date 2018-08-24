@@ -4,9 +4,7 @@ $(".game-over").hide();
 $(".you-win").hide();
 
 var mySound = document.querySelector(".son");
-//document.querySelector(".game-board").addEventListener("click", function(){
-   
-//})
+
 function Game() {
     this.board = [
       /*2*/  ["C", "W", "W", "W", "W", "W", "W", "W", "B", "B", "L", "B", "W", "W", "W", "W", "W", "C", "W", "W"],
@@ -161,7 +159,6 @@ function updateBoard() {
         }
       
 }
-//updateBoard();
     
     
   var timer = setInterval(function(){
