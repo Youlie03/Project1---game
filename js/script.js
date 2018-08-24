@@ -5,24 +5,24 @@ $(".you-win").hide();
 
 function Game() {
     this.board = [
-      /*2*/  ["C", "W", "W", "C", "W", "W", "W", "W", "B", "B", "L", "B", "W", "W", "W", "W", "W", "C", "W", "W"],
-      /*4*/  ["W", "W", "C", "W", "W", "W", "C", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "C", "W"],
-      /*4*/  ["D", "C", "W", "W", "C", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W"],
-      /*4*/  ["I", "C", "W", "W", "W", "C", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W"],
-      /*4*/  ["C", "W", "W", "W", "W", "W", "C", "I", "D", "I", "W", "W", "C", "W", "W", "W", "W", "C", "W", "W"],
+      /*2*/  ["C", "W", "W", "W", "W", "W", "W", "W", "B", "B", "L", "B", "W", "W", "W", "W", "W", "C", "W", "W"],
+      /*4*/  ["W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "C", "W"],
+      /*4*/  ["W", "D", "W", "W", "C", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
+      /*4*/  ["W", "I", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W"],
+      /*4*/  ["W", "C", "W", "W", "W", "W", "C", "I", "D", "I", "W", "W", "C", "W", "W", "W", "W", "C", "W", "W"],
       /*3*/  ["W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "C", "W"],
-      /*3*/  ["W", "C", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "C", "W", "C", "W", "W"],
+      /*3*/  ["W", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W"],
       /*3*/  ["C", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W"],
       /*3*/  ["W", "C", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W"],
-      /*3*/  ["I", "W", "W", "W", "W", "C", "W", "W", "W", "C", "W", "C", "W", "I", "D", "W", "W", "W", "W", "W"],
-      /*3*/  ["D", "W", "C", "W", "W", "C", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W"],
-      /*4*/  ["I", "W", "C", "W", "W", "W", "C", "W", "W", "W", "W", "W", "C", "W", "W", "C", "W", "W", "W", "W"],
+      /*3*/  ["W", "I", "W", "W", "W", "C", "W", "W", "W", "C", "W", "C", "W", "I", "D", "W", "W", "W", "W", "W"],
+      /*3*/  ["W", "D", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W"],
+      /*4*/  ["W", "I", "C", "W", "W", "W", "C", "W", "W", "W", "W", "W", "C", "W", "W", "C", "W", "W", "W", "W"],
       /*2*/  ["W", "C", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W"],
-      /*2*/  ["W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "D"],
+      /*2*/  ["W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "D"],
       /*2*/  ["W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "I"],
       /*2*/  ["W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W"],
       /*2*/  ["W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W"],
-      /*2*/  ["W", "C", "W", "W", "W", "W", "W", "I", "D", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W"],
+      /*2*/  ["W", "W", "W", "W", "W", "W", "W", "I", "D", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
       /*1*/  ["W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
       /*1*/  ["C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W"],
       /*2*/  ["W", "C", "W", "W", "W", "W", "W", "W", "W", "W", "W", "W", "C", "W", "W", "W", "I", "I", "D", "W"],
@@ -121,13 +121,17 @@ function updateBoard() {
            for(var j = player.board[i].length; j >= 0; j--){
             if (player.board[i][j] === "C") {
                 if (player.board[i][j+1] === "W") {
+                    player.board[i][j-18] = "C";
                     player.board[i][j+1] = "C";
                     player.board[i][j] = "W";
                 
+                
+                    
                 }
                 else if (player.board[i][j+1] === "P") {
                     player.board[i][j+1] = "PC";
                     player.board[i][j] = "W";
+                
                 }
                 else {
                     player.board[i][j] = "W"
@@ -140,8 +144,6 @@ function updateBoard() {
                         plus++;
                     }
                     player.board[i][j+plus] = "C";
-                        
-            // $( ".crocodile" ).hide()
                }
             }
                }
@@ -152,7 +154,7 @@ function updateBoard() {
                    player.board[i][0] = "C"
                }
            }
-       }
+        }
       
 }
 //updateBoard();
@@ -314,7 +316,7 @@ function removeDiamond(){
 // GAME OVER //
 function gameOver(){
     console.log($(".pipo").prop("class"))
-    if ($(".pipo").hasClass("crocodile")){
+    if ($(".pipo").hasClass("crocodile") && $(".pipo").hasClass(!"island") ){
         $(".game-over").show();
         $(".game-board").fadeOut(4000);
         clearInterval(timer);
